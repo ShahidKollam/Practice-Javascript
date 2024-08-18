@@ -1,14 +1,8 @@
-const debounce = (func, delay) => {
-    let timeout;
-    return (...args) => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func(...args), delay);
-    };
-  };
-  const log = () => console.log('Function called');
-  const debouncedLog = debounce(log, 1000);
-  debouncedLog();
-  debouncedLog();
-  debouncedLog();
-  debouncedLog();
-  
+function findLongestWord(str) {
+    return str.split(" ").reduce((res, item) => 
+      (res.length > item.length ? res : item), "");
+}
+
+const sentence = "The quick brown fox jumped over the lazy dog";
+const longest = findLongestWord(sentence);
+console.log(longest); // Output: "jumped"
